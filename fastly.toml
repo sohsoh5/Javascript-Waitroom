@@ -1,7 +1,7 @@
 # This file describes a Fastly Compute@Edge package. To learn more visit:
 # https://developer.fastly.com/reference/fastly-toml/
 
-authors = ["kblanks@fastly.com"]
+authors = ["You!"]
 description = "Park your users in a virtual queue to reduce the demand on your origins during peak times."
 language = "javascript"
 manifest_version = 2
@@ -10,7 +10,7 @@ name = "Queuing / Waiting room (JS)"
 [local_server]
 
   [local_server.backends]
-
+//when using local testing, these backends and dictionaries will be used
     [local_server.backends.protected_content]
       override_host = "eventworld-static.s3-website.eu-west-2.amazonaws.com"
       url = "http://eventworld-static.s3-website.eu-west-2.amazonaws.com"
