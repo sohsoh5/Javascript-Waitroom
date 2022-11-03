@@ -1,5 +1,6 @@
 function fetchConfig() {
   let dict = new Dictionary("config");
+  let waitParam = new Dictionary("waitroom_param");
 
   return {
     upstash: {
@@ -24,11 +25,14 @@ function fetchConfig() {
       // set to null to disable HTTP Basic Auth (not recommended!)
       password: null,
     },
+    
+      // The following will be grabbed from the waitroom_param edge dictionary
     queue: {
       // how often to refresh the queue page
       //
       // default 5 seconds
-      refreshInterval: 5,
+      refreshInterval: waitParam.get("refreshInterval"),
+
 
       // how long to remember a given visitor
       //
@@ -36,7 +40,8 @@ function fetchConfig() {
       // and have to start queuing again.
       //
       // default 24 hours
-      cookieExpiry: 24 * 60 * 60,
+      cookieExpiry: waitParam.get("cookieExpiry"),
+
 
       // how often to let visitors in automatically.
       // set to 0 to disable automatic queue advancement.
@@ -49,18 +54,20 @@ function fetchConfig() {
       // visitors than configured here.
       //
       // default 15 seconds
-      automatic: 15,
+      automatic: waitParam.get("waitTime"),
+
 
       // how many visitors should be let in at a time?
       //
       // default 5
-      automaticQuantity: 5,
+      automaticQuantity: waitParam.get("entryBatch"),
+
 
       // for demonstration purposes only, how many visitors should be
       // added to the queue ahead of a new visitor
       //
       // default 15, set to 1 for normal behaviour
-      demoPadding: 15,
+      demoPadding: waitParam.get("demoPadding"),
     },
   };
 }
