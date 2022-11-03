@@ -1,4 +1,3 @@
-//This is an example of what to input into your "config" dictionary
 {
   "upstash_url": "https://eu1-far-eagle-37042.upstash.io/",
   "upstash_token": "ToKeN=",
