@@ -4,8 +4,6 @@ Park website visitors in a virtual queue to reduce the demand on your origins du
 
 **For more details about other starter kits for Compute@Edge, see the [Fastly developer hub](https://developer.fastly.com/solutions/starters)**
 
-[![A screenshot of the queue page for a ticketing website. It reads: Sometimes we have to restrict the number of people who can access our website at the same time, so that everything works properly. There are 46 people ahead of you in the queue.](screenshot.png)](https://queue-demo.edgecompute.app/index.html)
-
 ## Features
 
 - Park visitors in a queue to limit the amount of active users on the website ⏳
@@ -18,12 +16,15 @@ Park website visitors in a virtual queue to reduce the demand on your origins du
 1. If you haven't already, [sign up for Upstash](https://www.npmjs.com/package/@upstash/redis) and create a Redis service.
 2. Initialize a Compute@Edge project using this starter kit.
    ```sh
-   fastly compute init --from=https://github.com/fastly/compute-starter-kit-javascript-queue
+   fastly compute init --from=https://github.com/sohsoh5/Javascript-Waitroom
    ```
-3. Create the `upstash` backend, changing the default hostname to the one provided in the Upstash console.
-4. Create the `protected_content` backend by accepting the default example host or setting your own.
-5. Populate the `config` dictionary by following the prompts to configure Upstash and set a secret for signing cookies.
-6. Run `fastly compute publish` to deploy your queue.
+   
+3. Run `fastly compute publish` to create a service and perform #4, #5, and #6 
+   - You can also manually alter your fastly.toml file to include and already existing service ID and enter the backends/dictionaries.
+4. Create the `upstash` backend, changing the default hostname to the one provided in the Upstash console.
+5. Create the `protected_content` backend by accepting the default example host or setting your own.
+6. Populate the `config` and `waitroom_param` dictionaries by following the prompts to configure Upstash and set a secret for signing cookies.
+7. Run `fastly compute publish` once more to deploy your queue.
 
 ## Understanding the code
 
