@@ -10,7 +10,7 @@ name = "Queuing / Waiting room (JS)"
 [local_server]
 
   [local_server.backends]
-//when using local testing, these backends and dictionaries will be used
+#when using local testing, these backends and dictionaries will be used
     [local_server.backends.protected_content]
       override_host = "eventworld-static.s3-website.eu-west-2.amazonaws.com"
       url = "http://eventworld-static.s3-website.eu-west-2.amazonaws.com"
