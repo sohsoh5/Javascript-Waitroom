@@ -24,6 +24,10 @@ name = "Queuing / Waiting room (JS)"
     [local_server.dictionaries.config]
       file = "devconfig.json"
       format = "json"
+      
+     [local_server.dictionaries.waitroom_param]
+      file = "waitparam.json"
+      format = "json"
 
 [scripts]
   build = "$(npm bin)/webpack && $(npm bin)/js-compute-runtime ./bin/index.js ./bin/main.wasm"
