@@ -21,8 +21,8 @@ Park website visitors in a virtual queue to reduce the demand on your origins du
    
 3. Run `fastly compute publish` to create a service and perform #4, #5, and #6 
    - You can also manually alter your fastly.toml file to include and already existing service ID and enter the backends/dictionaries.
-4. Create the `upstash` backend, changing the default hostname to the one provided in the Upstash console.
-5. Create the `protected_content` backend by accepting the default example host or setting your own.
+4. Create the `upstash` backend, changing the default hostname to the one provided in the Upstash console. This is your waiting room database backend.
+5. Create the `protected_content` backend by accepting the default example host or setting your own. This is your site that's being protected by the waiting room
 6. Populate the `config` and `waitroom_param` dictionaries by following the prompts to configure Upstash and set a secret for signing cookies.
 7. Run `fastly compute publish` once more to deploy your queue.
 
@@ -33,7 +33,7 @@ This starter is fully-featured, and requires some dependencies on top of the [`@
 - **[@upstash/redis](https://www.npmjs.com/package/@upstash/redis)** - a REST-based Redis client for storing queue state. You could easily swap this for your own storage backend.
 - **[jws](https://www.npmjs.com/package/jws)** - a library for generating and validating [JSON Web Tokens](https://datatracker.ietf.org/doc/html/rfc7519).
 
-The starter will require a backend to be configured to send requests to once visitors have made it through the queue. For demonstration, the default is a public S3 bucket with some assets and an index page.
+The starter will require a backend to be configured to send requests to once visitors have made it through the queue. For demonstration, try entering your site.
 
 The template uses webpack to bundle `index.js` and its imports into a single JS file, `bin/index.js`, which is then wrapped into a `.wasm` file, `bin/index.wasm` using the `js-compute-runtime` CLI tool bundled with the `@fastly/js-compute` npm package, and bundled into a `.tar.gz` file ready for deployment to Compute@Edge.
 
