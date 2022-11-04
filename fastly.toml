@@ -50,6 +50,28 @@ name = "Queuing / Waiting room (JS)"
 
         [setup.dictionaries.config.items.upstash_url]
           description = "URL of Upstash service (e.g. https://eu1-close-treefrog-35041.upstash.io)"
+          
+     [setup.dictionaries.waiting_room]
+
+      [setup.dictionaries.waiting_room.items]
+
+        [setup.dictionaries.waiting_room.items.cookieExpiry]
+          description = "How long the cookie is live for (86400 is a day)"
+
+        [setup.dictionaries.waiting_room.items.demoPadding]
+          description = "For demo use, how many users are in line already (use 20 for demo purposes). Set to 1 for normal behavior"
+
+        [setup.dictionaries.waiting_room.items.entryBatch]
+          description = "How many visitors should be let in at a time? (start with 15)"
+
+        [setup.dictionaries.waiting_room.items.refreshInterval]
+          description = "How often to refresh the queue page in seconds (start with 15)"
+
+        [setup.dictionaries.waiting_room.items.waitTime]
+          description = "How often to let users in in seconds (start with 15 seconds)"
+
+
+
 
   [setup.log_endpoints]
 
