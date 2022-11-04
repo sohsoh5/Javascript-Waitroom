@@ -1,0 +1,7 @@
+{
+  "refreshInterval": "5",
+  "cookieExpiry": "86400",
+  "waitTime": "15",
+  "entryBatch": "5",
+  "demoPadding": "25"
+}
