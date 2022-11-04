@@ -1,0 +1,5 @@
+{
+  "upstash_url": "<yourdatabasebackend>",
+  "upstash_token": "<ToKeN=>",
+  "jwt_secret": "abc123"
+}
