@@ -1,5 +1,10 @@
 {
   "upstash_url": "<yourdatabasebackend>",
   "upstash_token": "<ToKeN=>",
-  "jwt_secret": "abc123"
+  "jwt_secret": "abc123",
+  "refreshInterval": "5",
+  "cookieExpiry": "86400",
+  "waitTime": "15",
+  "entryBatch": "5",
+  "demoPadding": "25"
 }
